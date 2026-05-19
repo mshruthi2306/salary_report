@@ -1,0 +1,44 @@
+services:
+
+  database:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: staffhub
+      POSTGRES_PASSWORD: staffhub123
+      POSTGRES_DB: staffhubdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U staffhub -d staffhubdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  directus:
+    image: directus/directus:11
+    restart: always
+    ports:
+      - "8055:8055"
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      SECRET: "supersecretkey123staffhub"
+      DB_CLIENT: "pg"
+      DB_HOST: "database"
+      DB_PORT: "5432"
+      DB_DATABASE: "staffhubdb"
+      DB_USER: "staffhub"
+      DB_PASSWORD: "staffhub123"
+      ADMIN_EMAIL: "admin@staffhub.com"
+      ADMIN_PASSWORD: "Admin123!"
+      WEBSOCKETS_ENABLED: "true"
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "http://localhost:3000"
+      PUBLIC_URL: "http://localhost:8055"
+
+volumes:
+  db_data:
