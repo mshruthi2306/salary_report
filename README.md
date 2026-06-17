@@ -2,19 +2,20 @@
 
 ## Overview
 
-The Salary Management System is a web-based application developed during my internship to explore real-world full-stack development concepts and automate salary processing workflows.
+Salary Management System is a full-stack web application developed during my internship to streamline salary data management and automate salary slip generation workflows.
 
-The project allows salary data to be managed through structured inputs while providing an organized workflow for handling employee salary information.
+The application enables salary information to be processed through structured data inputs, stored securely in a database, and managed through an intuitive web interface.
 
 ## Features
 
 * Employee salary data management
-* Excel-based data processing
-* PDF salary slip generation
-* Backend data management using Directus
-* PostgreSQL database integration
-* Modern responsive user interface
-* Docker-based development environment
+* Excel file upload and processing
+* Salary record validation
+* Automated PDF salary slip generation
+* Database-driven salary storage
+* Responsive and user-friendly interface
+* Backend API integration
+* Containerized development environment using Docker
 
 ## Tech Stack
 
@@ -29,27 +30,57 @@ The project allows salary data to be managed through structured inputs while pro
 * Directus
 * PostgreSQL
 * Node.js
+* Express.js
 
-### Tools
+### Additional Libraries
+
+* SheetJS (xlsx)
+* jsPDF
+* Nodemailer
+
+### DevOps & Tools
 
 * Docker
-* Git & GitHub
+* Docker Compose
+* Git
+* GitHub
 
-## What I Learned
+## Project Structure
 
-This project helped me gain practical experience in:
+Frontend handles:
+
+* User interface
+* Excel upload workflow
+* Data validation
+* PDF generation
+
+Backend handles:
+
+* Data storage
+* API services
+* Database operations
+* Email workflow integration
+
+## Learning Outcomes
+
+Through this project, I gained practical experience in:
 
 * Full-stack application development
-* API integration
-* Database management
+* API integration and consumption
+* Database design and management
 * Docker containerization
+* Real-world debugging
 * Version control workflows
-* Real-world debugging and problem solving
+* Modern web application architecture
 
-## Repository
+## Future Enhancements
 
-GitHub: [Repository Link]
+* Authentication and role-based access
+* Advanced reporting dashboard
+* Cloud deployment
+* Audit logs and activity tracking
+* Enhanced email automation
 
-## Internship Learning
+## Acknowledgement
 
-More than the final application, this project was a valuable learning experience that provided exposure to real-world software development practices, project structure, and modern web technologies.
+Developed as part of my internship experience to gain hands-on exposure to real-world software development practices and modern web technologies.
